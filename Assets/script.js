@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(function() {
     const members = [
         { 
             name: 'Amanda Sukma',
@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     members.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
 
-    const countdownContainer = document.getElementById('countdowns');
-
     members.forEach(member => {
         const countdownElement = document.createElement('div');
         countdownElement.classList.add('countdown');
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div id="countdown-${member.name}" class="text-2xl font-bold countdown-timer"></div>
             </div>
         `;
-        countdownContainer.appendChild(countdownElement);
+        $("#countdowns").append(countdownElement);
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -74,4 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const countdownInterval = setInterval(updateCountdown, 1000);
     });
+
+    $("img.lazyload").lazyload();
 });
