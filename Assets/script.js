@@ -4,21 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Amanda Sukma',
             gen: 10,
             endDate: '2024-07-25T00:00:00+07:00', 
-            photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png', 
+            photo: '/Assets/img/amanda.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
         },
         { 
             name: 'Indira Seruni',
             gen: 10,
             endDate: '2024-07-11T00:00:00+07:00', 
-            photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png', 
+            photo: '/Assets/img/indira.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
         },
         { 
             name: 'Callista Alifia',
             gen: 10,
             endDate: '2024-08-16T00:00:00+07:00', 
-            photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png', 
+            photo: '/Assets/img/callie.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' 
         },
     ];
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownElement.classList.add('countdown');
         countdownElement.innerHTML = `
             <div class="member-container">
-                <img src="${member.photo}" alt="${member.name}" class="member-photo">
+                <img src="${member.photo}" data-src="${member.photo}" alt="${member.name}" class="member-photo lazyload">
                 <span class="category-badge">Gen ${member.gen}</span>
             </div>
             <div class="member-details-container">
