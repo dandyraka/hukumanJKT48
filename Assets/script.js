@@ -22,7 +22,7 @@ $(document).ready(function() {
             endDate: '2024-08-16T00:00:00+07:00', 
             photo: './Assets/img/callie.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id',
-            video: "https://twitter.com/JEKETI48POST/status/1791473424516403535?ref_src=twsrc%5Etfw"
+            video: "https://twitter.com/MuzziPtra/status/1791466051651453189?ref_src=twsrc%5Etfw"
         },
     ];
 
