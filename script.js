@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/31cd4f79474439c34a442.png' }
     ];
 
-    // Function to format date to "DD MMMM YYYY"
+    // Function to format date to "MMMM DD, YYYY"
     const formatDate = (dateStr) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const date = new Date(dateStr);
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownElement.innerHTML = `
             <img src="${member.photo}" alt="${member.name}">
             <div>
-                <h2 class="text-xl font-semibold">${member.name}</h2>
-                <p class="text-gray-600">Punished until: ${formatDate(member.endDate)}</p>
+                <h2 class="text-xl font-semibold member-name">${member.name}</h2>
+                <p class="text-gray-600">Punished until: <span class="punishment-date">${formatDate(member.endDate)}</span></p>
             </div>
             <div id="countdown-${member.name}" class="text-2xl font-bold countdown-timer"></div>
         `;
