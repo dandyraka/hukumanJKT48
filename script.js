@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const formatDate = (dateStr) => {
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Jakarta' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const date = new Date(dateStr);
         return date.toLocaleDateString('en-US', options);
     };
@@ -40,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-            distance -= months * (1000 * 60 * 60 * 24 * 30);
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             distance -= days * (1000 * 60 * 60 * 24);
 
@@ -55,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const seconds = Math.floor(distance / 1000);
 
             let countdownText = '';
-            if (months > 0) countdownText += `${months}m `;
             if (days > 0) countdownText += `${days}d `;
             if (hours > 0) countdownText += `${hours}h `;
             if (minutes > 0) countdownText += `${minutes}m `;
