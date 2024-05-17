@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const members = [
-        { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/643e2f488bc1cd09d20f6.png' },
-        { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/643e2f488bc1cd09d20f6.png' },
+        { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png' },
+        { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png' },
         { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/31cd4f79474439c34a442.png' }
     ];
+
+    // Function to format date to "DD MMMM YYYY"
+    const formatDate = (dateStr) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', options);
+    };
 
     // Sorting members by endDate
     members.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
@@ -17,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${member.photo}" alt="${member.name}">
             <div>
                 <h2 class="text-xl font-semibold">${member.name}</h2>
-                <p class="text-gray-600">Punished until: ${member.endDate}</p>
+                <p class="text-gray-600">Punished until: ${formatDate(member.endDate)}</p>
             </div>
             <div id="countdown-${member.name}" class="text-2xl font-bold countdown-timer"></div>
         `;
@@ -40,8 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const months = Math.floor(days / 30);
                 const remainingDays = days % 30;
 
-                document.getElementById(`countdown-${member.name}`).innerText = 
-                    `${months}m ${remainingDays}d ${hours}h ${minutes}m ${seconds}s`;
+                let countdownText = '';
+                if (months > 0) countdownText += `${months}m `;
+                if (remainingDays > 0) countdownText += `${remainingDays}d `;
+                if (hours > 0) countdownText += `${hours}h `;
+                if (minutes > 0) countdownText += `${minutes}m `;
+                countdownText += `${seconds}s`;
+
+                document.getElementById(`countdown-${member.name}`).innerText = countdownText;
             }
         }, 1000);
     });
