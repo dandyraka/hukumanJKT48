@@ -1,0 +1,111 @@
+.member-details {
+    margin-right: 10px;
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.member-details-container {
+    flex-grow: 1; 
+    margin-left: 10px; 
+}
+.countdown-timer {
+    margin-top: 10px;
+}
+.countdown img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.countdown .countdown-timer {
+    text-align: right;
+    font-size: 1.5rem;
+}
+.countdown .member-name,
+.countdown .punishment-date {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 640px) {
+    .countdown {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .member-container {
+        margin-right: 10px;
+    }
+
+    .member-details-container {
+        margin-left: 0;
+        margin-top: 0;
+        flex-grow: 1;
+    }
+
+
+    .countdown-timer-container {
+        display: flex;
+        align-items: center;
+    }
+    .countdown-timer {
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .countdown .member-name,
+    .countdown .punishment-date {
+        font-size: 1rem;
+    }
+    .countdown .punishment-date {
+        display: block;
+    }
+    .countdown .countdown-timer {
+        font-size: 1rem;
+    }
+}
+
+.countdown .news-button {
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 0.875rem;
+}
+
+.countdown .news-button:hover {
+    background-color: #333;
+}
+
+.countdown .category-badge {
+    background-color: black;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+}
+
+.member-info img {
+    margin-right: 15px;
+}
