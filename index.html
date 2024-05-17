@@ -20,6 +20,8 @@
 
     <link rel="icon" type="image/x-icon" href="https://telegra.ph/file/3f9ea7e5d82bc653f8ccc.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         .countdown {
             display: flex;
@@ -46,46 +48,57 @@
         }
         .countdown .member-name,
         .countdown .punishment-date {
-            font-size: 1.25rem; /* Ukuran font untuk nama member dan tanggal hukuman */
+            font-size: 1.25rem;
         }
 
         @media (max-width: 640px) {
             .countdown .member-name,
             .countdown .punishment-date {
-                font-size: 1rem; /* Ukuran font untuk layar ponsel */
+                font-size: 1rem;
             }
 
             .countdown .countdown-timer {
-                font-size: 1rem; /* Ukuran font untuk layar ponsel */
+                font-size: 1rem;
             }
 
             .countdown .punishment-date {
-                display: block; /* Tampilkan tanggal hukuman di baris baru */
+                display: block;
             }
         }
         
-        /* Style untuk tombol NEWS */
         .countdown .news-button {
             background-color: black;
             color: white;
-            padding: 4px 8px; /* Mengurangi padding tombol */
+            padding: 4px 8px;
             border-radius: 4px;
             text-decoration: none;
-            margin-top: 5px; /* Menambahkan margin atas */
-            display: inline-block; /* Tombol menjadi inline */
-            font-size: 0.875rem; /* Ukuran font tombol */
+            margin-top: 5px;
+            display: inline-block;
+            font-size: 0.875rem;
         }
 
         .countdown .news-button:hover {
-            background-color: #333; /* Warna latar belakang sedikit lebih gelap saat tombol dihover */
+            background-color: #333;
         }
     </style>   
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <div class="container mx-auto p-4 bg-white shadow-lg rounded-lg">
         <h1 class="text-2xl font-bold mb-4 text-center">JKT48 Punishment Countdown</h1>
         <div id="countdowns"></div>
     </div>
     <script src="script.js"></script>
+
+    <footer class="mt-8 text-center flex flex-col items-center">
+        <div class="flex justify-center space-x-4">
+          <a href="https://twitter.com/da_n_dy" target="_blank" class="text-gray-500 hover:text-gray-700">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com/dandyraka" target="_blank" class="text-gray-500 hover:text-gray-700">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p class="mt-2 text-sm text-gray-500">Made with &hearts; by Dandy</p>
+    </footer>
 </body>
 </html>
