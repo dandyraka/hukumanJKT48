@@ -46,24 +46,40 @@
         }
         .countdown .member-name,
         .countdown .punishment-date {
-            font-size: 1.25rem;
+            font-size: 1.25rem; /* Ukuran font untuk nama member dan tanggal hukuman */
         }
-    
+
         @media (max-width: 640px) {
             .countdown .member-name,
             .countdown .punishment-date {
-                font-size: 1rem;
+                font-size: 1rem; /* Ukuran font untuk layar ponsel */
             }
-    
+
             .countdown .countdown-timer {
-                font-size: 1rem;
+                font-size: 1rem; /* Ukuran font untuk layar ponsel */
             }
-    
+
             .countdown .punishment-date {
-                display: block;
+                display: block; /* Tampilkan tanggal hukuman di baris baru */
             }
         }
-    </style>    
+        
+        /* Style untuk tombol NEWS */
+        .countdown .news-button {
+            background-color: black;
+            color: white;
+            padding: 4px 8px; /* Mengurangi padding tombol */
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 5px; /* Menambahkan margin atas */
+            display: inline-block; /* Tombol menjadi inline */
+            font-size: 0.875rem; /* Ukuran font tombol */
+        }
+
+        .countdown .news-button:hover {
+            background-color: #333; /* Warna latar belakang sedikit lebih gelap saat tombol dihover */
+        }
+    </style>   
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="container mx-auto p-4 bg-white shadow-lg rounded-lg">

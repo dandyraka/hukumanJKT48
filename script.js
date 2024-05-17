@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const members = [
-        { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png' },
-        { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png' },
-        { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png' }
+        { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
+        { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
+        { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png', newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' },
     ];
 
-    // Function to format date to "MMMM DD, YYYY"
     const formatDate = (dateStr) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const date = new Date(dateStr);
         return date.toLocaleDateString('en-US', options);
     };
 
-    // Sorting members by endDate
     members.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
 
     const countdownContainer = document.getElementById('countdowns');
@@ -25,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
                 <h2 class="text-xl font-semibold member-name">${member.name}</h2>
                 <p class="text-gray-600">Punished until: <span class="punishment-date">${formatDate(member.endDate)}</span></p>
+                <a href="${member.newsURL}" target="_blank" class="news-button underline">NEWS</a>
             </div>
             <div id="countdown-${member.name}" class="text-2xl font-bold countdown-timer"></div>
         `;
