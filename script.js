@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const members = [
         { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png' },
         { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png' },
-        { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/31cd4f79474439c34a442.png' }
+        { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png' }
     ];
 
     // Function to format date to "MMMM DD, YYYY"
