@@ -4,21 +4,21 @@ $(document).ready(function() {
             name: 'Amanda Sukma',
             gen: 10,
             endDate: '2024-07-25T00:00:00+07:00', 
-            photo: '/Assets/img/amanda.png', 
+            photo: './Assets/img/amanda.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
         },
         { 
             name: 'Indira Seruni',
             gen: 10,
             endDate: '2024-07-11T00:00:00+07:00', 
-            photo: '/Assets/img/indira.png', 
+            photo: './Assets/img/indira.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
         },
         { 
             name: 'Callista Alifia',
             gen: 10,
             endDate: '2024-08-16T00:00:00+07:00', 
-            photo: '/Assets/img/callie.png', 
+            photo: './Assets/img/callie.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' 
         },
     ];
