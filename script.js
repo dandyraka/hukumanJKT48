@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const members = [
-        { name: 'Amanda Sukma', endDate: '2024-07-25', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
-        { name: 'Indira Seruni', endDate: '2024-07-11', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
-        { name: 'Callista Alifia', endDate: '2024-08-16', photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png', newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' },
+        { name: 'Amanda Sukma', endDate: '2024-07-25T00:00:00+07:00', photo: 'https://telegra.ph/file/ef499ca1c37c36cc728f5.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
+        { name: 'Indira Seruni', endDate: '2024-07-11T00:00:00+07:00', photo: 'https://telegra.ph/file/d79ddffdb978d6b85d819.png', newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' },
+        { name: 'Callista Alifia', endDate: '2024-08-16T00:00:00+07:00', photo: 'https://telegra.ph/file/bdd0033d311624f197f6a.png', newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' },
     ];
 
     const formatDate = (dateStr) => {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Jakarta' };
         const date = new Date(dateStr);
         return date.toLocaleDateString('en-US', options);
     };
@@ -30,31 +30,38 @@ document.addEventListener('DOMContentLoaded', () => {
         countdownContainer.appendChild(countdownElement);
 
         const countdownInterval = setInterval(() => {
-            const now = new Date().getTime();
-            const endDate = new Date(member.endDate).getTime();
-            const distance = endDate - now;
+            const now = new Date();
+            const endDate = new Date(member.endDate);
+            let distance = endDate - now;
 
             if (distance < 0) {
                 document.getElementById(`countdown-${member.name}`).innerText = "Punishment over";
                 clearInterval(countdownInterval);
-            } else {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                const months = Math.floor(days / 30);
-                const remainingDays = days % 30;
-
-                let countdownText = '';
-                if (months > 0) countdownText += `${months}m `;
-                if (remainingDays > 0) countdownText += `${remainingDays}d `;
-                if (hours > 0) countdownText += `${hours}h `;
-                if (minutes > 0) countdownText += `${minutes}m `;
-                countdownText += `${seconds}s`;
-
-                document.getElementById(`countdown-${member.name}`).innerText = countdownText;
+                return;
             }
+
+            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+            distance -= months * (1000 * 60 * 60 * 24 * 30);
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            distance -= days * (1000 * 60 * 60 * 24);
+
+            const hours = Math.floor(distance / (1000 * 60 * 60));
+            distance -= hours * (1000 * 60 * 60);
+
+            const minutes = Math.floor(distance / (1000 * 60));
+            distance -= minutes * (1000 * 60);
+
+            const seconds = Math.floor(distance / 1000);
+
+            let countdownText = '';
+            if (months > 0) countdownText += `${months}m `;
+            if (days > 0) countdownText += `${days}d `;
+            if (hours > 0) countdownText += `${hours}h `;
+            if (minutes > 0) countdownText += `${minutes}m `;
+            countdownText += `${seconds}s`;
+
+            document.getElementById(`countdown-${member.name}`).innerText = countdownText.trim();
         }, 1000);
     });
 });
