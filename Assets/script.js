@@ -5,21 +5,24 @@ $(document).ready(function() {
             gen: 10,
             endDate: '2024-07-25T00:00:00+07:00', 
             photo: './Assets/img/amanda.png', 
-            newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
+            newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
+            video: "https://twitter.com/viiccc89/status/1786036199657972202?ref_src=twsrc%5Etfw"
         },
         { 
             name: 'Indira Seruni',
             gen: 10,
             endDate: '2024-07-11T00:00:00+07:00', 
             photo: './Assets/img/indira.png', 
-            newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id' 
+            newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
+            video: "https://twitter.com/viiccc89/status/1786036199657972202?ref_src=twsrc%5Etfw"
         },
         { 
             name: 'Callista Alifia',
             gen: 10,
             endDate: '2024-08-16T00:00:00+07:00', 
             photo: './Assets/img/callie.png', 
-            newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id' 
+            newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id',
+            video: "https://twitter.com/JEKETI48POST/status/1791473424516403535?ref_src=twsrc%5Etfw"
         },
     ];
 
@@ -44,6 +47,7 @@ $(document).ready(function() {
                     <h2 class="text-xl font-semibold member-name">${member.name}</h2>
                     <p class="text-gray-600">Punished until: <span class="punishment-date">${formatDate(member.endDate)}</span></p>
                     <a href="${member.newsURL}" target="_blank" class="news-button underline">NEWS</a>
+                    <a href="#" class="video-button underline" data-video="${member.video}"><i class="fa-solid fa-video"></i></a>
                 </div>
             </div>
             <div class="countdown-timer-container">
@@ -74,4 +78,20 @@ $(document).ready(function() {
     });
 
     $("img.lazyload").lazyload();
+
+    $(document).on("click", ".video-button", function(e) {
+        e.preventDefault();
+        const videoUrl = $(this).data("video");
+        Swal.fire({
+            html: `<blockquote class="twitter-tweet" data-media-max-width="560"><a href="${videoUrl}"></a></blockquote>`,
+            showCloseButton: false,
+            showConfirmButton: false,
+            width: '560px',
+            padding: '1rem',
+            didOpen: () => {
+                twttr.widgets.load();
+            }
+        });
+    });
+  
 });
