@@ -3,7 +3,7 @@ $(document).ready(function() {
         { 
             name: 'Amanda Sukma',
             gen: 10,
-            endDate: '2024-07-25T00:00:00+07:00', 
+            endDate: '2024-07-26T00:00:00+07:00', 
             photo: './Assets/img/amanda.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
             video: "https://twitter.com/viiccc89/status/1786036199657972202?ref_src=twsrc%5Etfw"
@@ -11,7 +11,7 @@ $(document).ready(function() {
         { 
             name: 'Indira Seruni',
             gen: 10,
-            endDate: '2024-07-11T00:00:00+07:00', 
+            endDate: '2024-07-12T00:00:00+07:00', 
             photo: './Assets/img/indira.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
             video: "https://twitter.com/viiccc89/status/1786036199657972202?ref_src=twsrc%5Etfw"
@@ -19,7 +19,7 @@ $(document).ready(function() {
         { 
             name: 'Callista Alifia',
             gen: 10,
-            endDate: '2024-08-16T00:00:00+07:00', 
+            endDate: '2024-08-17T00:00:00+07:00', 
             photo: './Assets/img/callie.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id',
             video: "https://twitter.com/MuzziPtra/status/1791466051651453189?ref_src=twsrc%5Etfw"
