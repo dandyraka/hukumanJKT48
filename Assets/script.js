@@ -27,7 +27,7 @@ $(document).ready(function() {
         { 
             name: 'Flora Shafiq',
             gen: 8,
-            endDate: '2025-02-11T00:00:00+07:00', 
+            endDate: '2025-02-10T00:00:00+07:00', 
             photo: 'https://jkt48.com/profile/flora_shafiq.jpg?v=20230116', 
             newsURL: 'https://jkt48.com/news/detail/id/1874?lang=id',
             video: false
