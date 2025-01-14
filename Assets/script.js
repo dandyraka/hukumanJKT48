@@ -44,6 +44,7 @@ $(document).ready(function() {
 
     members.forEach(member => {
         const countdownElement = document.createElement('div');
+        const klarifVid = (member.video) ? `<a href="#" class="video-button underline" data-video="${member.video}"><i class="fa-solid fa-video"></i></a>` : ``;
         countdownElement.classList.add('countdown');
         countdownElement.innerHTML = `
             <div class="member-container">
@@ -55,7 +56,7 @@ $(document).ready(function() {
                     <h2 class="text-xl font-semibold member-name">${member.name}</h2>
                     <p class="text-gray-600">Punished until: <span class="punishment-date">${formatDate(member.endDate)}</span></p>
                     <a href="${member.newsURL}" target="_blank" class="news-button underline">NEWS</a>
-                    <a href="#" class="video-button underline" data-video="${member.video}"><i class="fa-solid fa-video"></i></a>
+                    ${klarifVid}
                 </div>
             </div>
             <div class="countdown-timer-container">
