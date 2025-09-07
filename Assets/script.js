@@ -35,7 +35,7 @@ $(document).ready(function() {
         { 
             name: 'Gabriela Abigail',
             gen: 10,
-            endDate: '2025-09-01T00:00:00+07:00', 
+            endDate: '2025-11-01T00:00:00+07:00', 
             photo: 'https://jkt48.com/profile/gabriela_abigail.jpg?v=20230531', 
             newsURL: 'https://jkt48.com/news/detail/id/1949?lang=id',
             video: false
