@@ -1,125 +1,54 @@
-.member-details {
-    margin-right: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
+        radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: #1f2937;
+    min-height: 100vh;
 }
 
-.countdown {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f3f4f6;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-.member-details-container {
-    flex-grow: 1; 
-    margin-left: 10px; 
-}
-.countdown-timer {
-    margin-top: 10px;
-}
-.countdown img {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 15px;
+.glass-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.countdown .countdown-timer {
-    text-align: right;
-    font-size: 1.5rem;
-}
-.countdown .member-name,
-.countdown .punishment-date {
-    font-size: 1.25rem;
+.glass-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: #fff;
 }
 
-@media (max-width: 640px) {
-    .countdown {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .member-container {
-        margin-right: 10px;
-    }
-
-    .member-details-container {
-        margin-left: 0;
-        margin-top: 0;
-        flex-grow: 1;
-    }
-
-
-    .countdown-timer-container {
-        display: flex;
-        align-items: center;
-    }
-    .countdown-timer {
-        text-align: right;
-        margin-top: 10px;
-    }
-
-    .countdown .member-name,
-    .countdown .punishment-date {
-        font-size: 1rem;
-    }
-    .countdown .punishment-date {
-        display: block;
-    }
-    .countdown .countdown-timer {
-        font-size: 1rem;
-    }
+.member-photo {
+    transition: transform 0.5s ease;
+}
+.glass-card:hover .member-photo {
+    transform: scale(1.05);
 }
 
-.countdown .news-button {
-    background-color: black;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
-    font-size: 0.875rem;
+h1, h2, h3, p, span, div {
+    letter-spacing: -0.01em; 
 }
 
-.countdown .news-button:hover {
-    background-color: #333;
-}
-
-.countdown .video-button {
-    background-color: black;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
-    font-size: 0.875rem;
-}
-.countdown .video-button:hover {
-    background-color: #333;
-}
-
-.countdown .category-badge {
-    background-color: black;
-    color: white;
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-top: 5px;
-    display: inline-block;
-}
-
-.member-info {
-    display: flex;
-    align-items: center;
-}
-
-.member-info img {
-    margin-right: 15px;
+div:where(.swal2-container) div:where(.swal2-popup) {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
