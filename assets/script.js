@@ -3,6 +3,7 @@ $(document).ready(function() {
         { 
             name: 'Amanda Sukma',
             gen: 10,
+            status: 'active',
             endDate: '2024-07-26T00:00:00+07:00', 
             photo: './assets/img/amanda.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
@@ -12,6 +13,7 @@ $(document).ready(function() {
         { 
             name: 'Indira Seruni',
             gen: 10,
+            status: 'graduate',
             endDate: '2024-07-12T00:00:00+07:00', 
             photo: './assets/img/indira.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
@@ -21,6 +23,7 @@ $(document).ready(function() {
         { 
             name: 'Callista Alifia',
             gen: 10,
+            status: 'fired',
             endDate: '2024-08-17T00:00:00+07:00', 
             photo: './assets/img/callie.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1793?lang=id',
@@ -30,6 +33,7 @@ $(document).ready(function() {
         { 
             name: 'Flora Shafiq',
             gen: 8,
+            status: 'resign',
             endDate: '2025-02-11T00:00:00+07:00', 
             photo: './assets/img/flora.jpg', 
             newsURL: 'https://jkt48.com/news/detail/id/1874?lang=id',
@@ -39,6 +43,7 @@ $(document).ready(function() {
         { 
             name: 'Gabriela Abigail',
             gen: 10,
+            status: 'active',
             endDate: '2025-11-01T00:00:00+07:00', 
             photo: './assets/img/ella.jpg', 
             newsURL: 'https://jkt48.com/news/detail/id/1949?lang=id',
@@ -48,6 +53,7 @@ $(document).ready(function() {
         { 
             name: 'Gendis Mayrannisa',
             gen: 11,
+            status: 'active',
             endDate: '2026-05-18T00:00:00+07:00', 
             photo: './assets/img/gendis.jpg', 
             newsURL: 'https://jkt48.com/news/detail/id/1995?lang=id',
@@ -68,11 +74,15 @@ $(document).ready(function() {
         const countdownElement = document.createElement('div');
 
         const proofBtn = (member.proofs && member.proofs.length > 0) 
-        ? `<a href="#" class="proof-button w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all shadow-sm" data-name="${member.name}" data-proofs='${JSON.stringify(member.proofs)}' title="Lihat Bukti"><i class="fa-solid fa-camera text-xs"></i></a>` 
+        ? `<a href="#" class="proof-button w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all" data-name="${member.name}" data-proofs='${JSON.stringify(member.proofs)}' title="Lihat Bukti"><i class="fa-solid fa-camera text-xs"></i></a>` 
         : ``;
 
         const klarifVid = (member.video) 
-            ? `<a href="#" class="video-button w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all shadow-sm" data-video="${member.video}" title="Watch Video"><i class="fa-solid fa-play text-xs"></i></a>` 
+            ? `<a href="#" class="video-button w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all" data-video="${member.video}" title="Watch Video"><i class="fa-solid fa-play text-xs"></i></a>` 
+            : ``;
+
+        const statusBadge = (member.status && member.status !== 'active') 
+            ? `<span class="ml-2 text-[9px] px-1.5 py-0.5 rounded bg-red-100 text-red-600 border border-red-200 uppercase font-bold">${member.status}</span>` 
             : ``;
 
         countdownElement.className = 'glass-card rounded-2xl md:rounded-3xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 relative overflow-hidden group transition-all hover:bg-white/60';
@@ -80,7 +90,7 @@ $(document).ready(function() {
         countdownElement.innerHTML = `
             <div class="relative shrink-0">
                 <div class="w-24 h-24 sm:w-24 sm:h-24 rounded-full sm:rounded-2xl overflow-hidden shadow-md border-2 border-white/80 mx-auto">
-                    <img src="${member.photo}" loading="lazy" alt="${member.name}" class="member-photo w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <img src="${member.photo}" loading="lazy" alt="${member.name}" class="member-photo w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ${member.status !== 'active' ? 'grayscale opacity-80' : ''}">
                 </div>
                 <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-right-2 sm:-bottom-2 bg-gray-900 text-white text-[10px] font-bold px-1 py-0.5 sm:py-1 rounded-lg border border-white shadow-sm z-20">
                     Gen ${member.gen}
@@ -89,12 +99,14 @@ $(document).ready(function() {
 
             <div class="flex-grow w-full z-10 flex flex-col items-center sm:items-start text-center sm:text-left">
                 
-                <h2 class="text-xl sm:text-xl font-bold text-gray-800 leading-tight mb-2">${member.name}</h2>
+                <h2 class="text-xl sm:text-xl font-bold text-gray-800 leading-tight mb-2">
+                    ${member.name} ${statusBadge}
+                </h2>
                 
                 <div class="flex gap-2 justify-center sm:justify-start mb-4">
                     ${proofBtn}
                     ${klarifVid}
-                    <a href="${member.newsURL}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all shadow-sm border border-white/50" title="Read News">
+                    <a href="${member.newsURL}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-gray-700 transition-all border border-white/50" title="Read News">
                         <i class="fa-solid fa-newspaper text-xs"></i>
                     </a>
                 </div>
