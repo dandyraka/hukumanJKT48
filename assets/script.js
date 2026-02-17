@@ -100,7 +100,7 @@ $(document).ready(function() {
                 </div>
 
                 <p class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                    Selesai Hukuman: <span class="text-gray-600">${formatDate(member.endDate)}</span>
+                    Hukuman Selesai: <span class="text-gray-600">${formatDate(member.endDate)}</span>
                 </p>
                 
                 <div id="countdown-${member.name.replace(/\s+/g, '')}" class="text-xl sm:text-2xl font-mono font-bold text-gray-600 bg-white/60 rounded-xl py-2 px-4 border border-white/50 backdrop-blur-sm shadow-inner w-full sm:w-auto">
