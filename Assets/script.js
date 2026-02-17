@@ -40,6 +40,14 @@ $(document).ready(function() {
             newsURL: 'https://jkt48.com/news/detail/id/1949?lang=id',
             video: false
         },
+        { 
+            name: 'Gendis Mayrannisa',
+            gen: 11,
+            endDate: '2026-05-18T00:00:00+07:00', 
+            photo: 'https://jkt48.com/profile/gendis_mayrannisa.jpg?v=20231212', 
+            newsURL: 'https://jkt48.com/news/detail/id/1995?lang=id',
+            video: false
+        },
     ];
 
     const formatDate = (dateStr) => {
