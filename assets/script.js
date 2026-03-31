@@ -3,7 +3,7 @@ $(document).ready(function() {
         { 
             name: 'Amanda Sukma',
             gen: 10,
-            status: 'active',
+            status: 'graduate',
             endDate: '2024-07-26T00:00:00+07:00', 
             photo: './assets/img/amanda.png', 
             newsURL: 'https://jkt48.com/news/detail/id/1784?lang=id',
